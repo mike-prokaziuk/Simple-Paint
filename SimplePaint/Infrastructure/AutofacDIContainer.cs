@@ -14,7 +14,7 @@ namespace SimplePaint.Infrastructure
         public static void AddBindings()
         {
             var builder = new ContainerBuilder();
-
+            builder.RegisterType<Painter>().As<IPainter>();
             Container = builder.Build();
         }
     }

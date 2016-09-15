@@ -40,15 +40,15 @@
             this.changeMainColorBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.changeFillColorBtn = new System.Windows.Forms.ToolStripButton();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.lineWidthDDB = new System.Windows.Forms.ToolStripDropDownButton();
-            this.OnePointTSMI = new System.Windows.Forms.ToolStripMenuItem();
-            this.TwoPointTSMI = new System.Windows.Forms.ToolStripMenuItem();
-            this.FourPointTSMI = new System.Windows.Forms.ToolStripMenuItem();
-            this.bufferedPanel = new SimplePaint.BufferedPanel();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.bufferedPanel = new SimplePaint.BufferedPanel();
+            this.OnePointTSMI = new SimplePaint.ValuedToolStripMenuItem();
+            this.TwoPointTSMI = new SimplePaint.ValuedToolStripMenuItem();
+            this.FourPointTSMI = new SimplePaint.ValuedToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -150,21 +150,6 @@
             this.changeFillColorBtn.Size = new System.Drawing.Size(58, 22);
             this.changeFillColorBtn.Text = "Fill Color";
             // 
-            // statusStrip
-            // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar1});
-            this.statusStrip.Location = new System.Drawing.Point(0, 419);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(624, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "statusStrip1";
-            // 
-            // toolStripProgressBar1
-            // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
@@ -184,25 +169,20 @@
             this.lineWidthDDB.Text = "Line Width";
             this.lineWidthDDB.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
             // 
-            // OnePointTSMI
+            // statusStrip
             // 
-            this.OnePointTSMI.Checked = true;
-            this.OnePointTSMI.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.OnePointTSMI.Name = "OnePointTSMI";
-            this.OnePointTSMI.Size = new System.Drawing.Size(111, 22);
-            this.OnePointTSMI.Text = "1 Point";
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar1});
+            this.statusStrip.Location = new System.Drawing.Point(0, 419);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(624, 22);
+            this.statusStrip.TabIndex = 2;
+            this.statusStrip.Text = "statusStrip1";
             // 
-            // TwoPointTSMI
+            // toolStripProgressBar1
             // 
-            this.TwoPointTSMI.Name = "TwoPointTSMI";
-            this.TwoPointTSMI.Size = new System.Drawing.Size(111, 22);
-            this.TwoPointTSMI.Text = "2 Point";
-            // 
-            // FourPointTSMI
-            // 
-            this.FourPointTSMI.Name = "FourPointTSMI";
-            this.FourPointTSMI.Size = new System.Drawing.Size(111, 22);
-            this.FourPointTSMI.Text = "4 Point";
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
             // 
             // bufferedPanel
             // 
@@ -211,6 +191,32 @@
             this.bufferedPanel.Name = "bufferedPanel";
             this.bufferedPanel.Size = new System.Drawing.Size(624, 364);
             this.bufferedPanel.TabIndex = 3;
+            // 
+            // OnePointTSMI
+            // 
+            this.OnePointTSMI.Checked = true;
+            this.OnePointTSMI.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.OnePointTSMI.Name = "OnePointTSMI";
+            this.OnePointTSMI.Size = new System.Drawing.Size(152, 22);
+            this.OnePointTSMI.Text = "1 Point";
+            this.OnePointTSMI.Value = 1;
+            this.OnePointTSMI.Click += new System.EventHandler(this.PointsTSMI_Click);
+            // 
+            // TwoPointTSMI
+            // 
+            this.TwoPointTSMI.Name = "TwoPointTSMI";
+            this.TwoPointTSMI.Size = new System.Drawing.Size(152, 22);
+            this.TwoPointTSMI.Text = "2 Point";
+            this.TwoPointTSMI.Value = 2;
+            this.TwoPointTSMI.Click += new System.EventHandler(this.PointsTSMI_Click);
+            // 
+            // FourPointTSMI
+            // 
+            this.FourPointTSMI.Name = "FourPointTSMI";
+            this.FourPointTSMI.Size = new System.Drawing.Size(152, 22);
+            this.FourPointTSMI.Text = "4 Point";
+            this.FourPointTSMI.Value = 4;
+            this.FourPointTSMI.Click += new System.EventHandler(this.PointsTSMI_Click);
             // 
             // MainForm
             // 
@@ -253,9 +259,9 @@
         private BufferedPanel bufferedPanel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripDropDownButton lineWidthDDB;
-        private System.Windows.Forms.ToolStripMenuItem OnePointTSMI;
-        private System.Windows.Forms.ToolStripMenuItem TwoPointTSMI;
-        private System.Windows.Forms.ToolStripMenuItem FourPointTSMI;
+        private ValuedToolStripMenuItem OnePointTSMI;
+        private ValuedToolStripMenuItem TwoPointTSMI;
+        private ValuedToolStripMenuItem FourPointTSMI;
         private System.Windows.Forms.ColorDialog colorDialog;
     }
 }

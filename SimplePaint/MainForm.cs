@@ -26,5 +26,16 @@ namespace SimplePaint
         {
 
         }
+
+        private void PointsTSMI_Click(object sender, EventArgs e)
+        {
+            foreach (ToolStripMenuItem itm in lineWidthDDB.DropDownItems)
+            {
+                itm.Checked = false;
+            }
+
+            ToolStripMenuItem itmClicked = sender as ToolStripMenuItem;
+            itmClicked.Checked = true;
+        }
     }
 }
