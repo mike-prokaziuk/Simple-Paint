@@ -80,5 +80,27 @@ namespace SimplePaint
                 prevPoint = currPoint;
             }
         }
+        public void DrawCircle(object sender,PaintEventArgs e)
+        {
+            if (Canvas.TempImage != null)
+            {
+                Canvas.TempImage = (Bitmap)Canvas.Snapshot.Clone();
+                Graphics g = Graphics.FromImage(Canvas.TempImage);
+                if (Canvas.FillColor == Color.Empty)
+                {
+                    Pen myPen = new Pen(Canvas.MainColor, Canvas.LineWidth);
+                    g.DrawEllipse(myPen, prevPoint.X, prevPoint.Y, currPoint.X - prevPoint.X, currPoint.Y - prevPoint.Y);
+
+                }
+                else
+                {
+                    Brush brush = new SolidBrush(Canvas.FillColor);
+                    g.FillEllipse(brush, prevPoint.X, prevPoint.Y, currPoint.X - prevPoint.X, currPoint.Y - prevPoint.Y);
+
+                }
+                e.Graphics.DrawImageUnscaled(Canvas.TempImage, 0, 0);
+            }
+
+        }
     }
 }

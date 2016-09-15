@@ -16,7 +16,6 @@ namespace SimplePaint
         public Color MainColor { get; set; }
         public Color FillColor { get; set; }
         public Graphics Graphic { get; set; }
-        public Panel Panel { get; set; }
         public Canvas()
         {
             LineWidth = 1;

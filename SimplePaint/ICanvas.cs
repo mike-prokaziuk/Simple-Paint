@@ -11,6 +11,5 @@ namespace SimplePaint
         Color MainColor { get; set; }
         Color FillColor { get; set; }
         Graphics Graphic { get; set; }
-        Panel Panel { get; set; }
     }
 }

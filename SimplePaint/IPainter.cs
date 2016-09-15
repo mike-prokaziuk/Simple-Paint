@@ -13,5 +13,6 @@ namespace SimplePaint
         void DrawLine(object sender, PaintEventArgs e);
         void DrawRectangle(object sender, PaintEventArgs e);
         void DrawWithPencil(object sender, PaintEventArgs e);
+        void DrawCircle(object sender, PaintEventArgs e);
     }
 }

@@ -20,7 +20,6 @@ namespace SimplePaint
             InitializeComponent();
             _painter = painter;
             _painter.Canvas.Snapshot = new Bitmap(bufferedPanel.ClientRectangle.Width, bufferedPanel.ClientRectangle.Height);
-            _painter.Canvas.Panel = bufferedPanel;
         }
         private void PointsTSMI_Click(object sender, EventArgs e)
         {
@@ -93,6 +92,9 @@ namespace SimplePaint
                     break;
                 case "Pencil":
                     _painter.DrawWithPencil(sender, e);
+                    break;
+                case "Circle":
+                    _painter.DrawCircle(sender, e);
                     break;
                 default:
                     break;
