@@ -44,13 +44,21 @@
             this.EmptyFillColorTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.lineWidthDDB = new System.Windows.Forms.ToolStripDropDownButton();
-            this.OnePointTSMI = new SimplePaint.ValuedToolStripMenuItem();
-            this.TwoPointTSMI = new SimplePaint.ValuedToolStripMenuItem();
-            this.FourPointTSMI = new SimplePaint.ValuedToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.effectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.invertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bufferedPanel = new SimplePaint.BufferedPanel();
+            this.OnePointTSMI = new SimplePaint.ValuedToolStripMenuItem();
+            this.TwoPointTSMI = new SimplePaint.ValuedToolStripMenuItem();
+            this.FourPointTSMI = new SimplePaint.ValuedToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.ToolBar.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -59,7 +67,8 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.effectsToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(624, 24);
@@ -68,6 +77,13 @@
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.loadToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.toolStripSeparator,
+            this.exitToolStripMenuItem1});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -194,32 +210,6 @@
             this.lineWidthDDB.Size = new System.Drawing.Size(77, 22);
             this.lineWidthDDB.Text = "Line Width";
             // 
-            // OnePointTSMI
-            // 
-            this.OnePointTSMI.Checked = true;
-            this.OnePointTSMI.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.OnePointTSMI.Name = "OnePointTSMI";
-            this.OnePointTSMI.Size = new System.Drawing.Size(152, 22);
-            this.OnePointTSMI.Text = "1 Point";
-            this.OnePointTSMI.Value = 1;
-            this.OnePointTSMI.Click += new System.EventHandler(this.PointsTSMI_Click);
-            // 
-            // TwoPointTSMI
-            // 
-            this.TwoPointTSMI.Name = "TwoPointTSMI";
-            this.TwoPointTSMI.Size = new System.Drawing.Size(152, 22);
-            this.TwoPointTSMI.Text = "2 Point";
-            this.TwoPointTSMI.Value = 2;
-            this.TwoPointTSMI.Click += new System.EventHandler(this.PointsTSMI_Click);
-            // 
-            // FourPointTSMI
-            // 
-            this.FourPointTSMI.Name = "FourPointTSMI";
-            this.FourPointTSMI.Size = new System.Drawing.Size(152, 22);
-            this.FourPointTSMI.Text = "4 Point";
-            this.FourPointTSMI.Value = 4;
-            this.FourPointTSMI.Click += new System.EventHandler(this.PointsTSMI_Click);
-            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -235,6 +225,54 @@
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
             this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
             // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.newToolStripMenuItem.Text = "New";
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.loadToolStripMenuItem.Text = "Load";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(97, 6);
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
+            this.exitToolStripMenuItem1.Text = "Exit";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(97, 6);
+            // 
+            // effectsToolStripMenuItem
+            // 
+            this.effectsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.invertToolStripMenuItem});
+            this.effectsToolStripMenuItem.Name = "effectsToolStripMenuItem";
+            this.effectsToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.effectsToolStripMenuItem.Text = "Effects";
+            // 
+            // invertToolStripMenuItem
+            // 
+            this.invertToolStripMenuItem.Name = "invertToolStripMenuItem";
+            this.invertToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.invertToolStripMenuItem.Text = "Invert";
+            // 
             // bufferedPanel
             // 
             this.bufferedPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -246,6 +284,32 @@
             this.bufferedPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bufferedPanel_MouseDown);
             this.bufferedPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.bufferedPanel_MouseMove);
             this.bufferedPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bufferedPanel_MouseUp);
+            // 
+            // OnePointTSMI
+            // 
+            this.OnePointTSMI.Checked = true;
+            this.OnePointTSMI.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.OnePointTSMI.Name = "OnePointTSMI";
+            this.OnePointTSMI.Size = new System.Drawing.Size(111, 22);
+            this.OnePointTSMI.Text = "1 Point";
+            this.OnePointTSMI.Value = 1;
+            this.OnePointTSMI.Click += new System.EventHandler(this.PointsTSMI_Click);
+            // 
+            // TwoPointTSMI
+            // 
+            this.TwoPointTSMI.Name = "TwoPointTSMI";
+            this.TwoPointTSMI.Size = new System.Drawing.Size(111, 22);
+            this.TwoPointTSMI.Text = "2 Point";
+            this.TwoPointTSMI.Value = 2;
+            this.TwoPointTSMI.Click += new System.EventHandler(this.PointsTSMI_Click);
+            // 
+            // FourPointTSMI
+            // 
+            this.FourPointTSMI.Name = "FourPointTSMI";
+            this.FourPointTSMI.Size = new System.Drawing.Size(111, 22);
+            this.FourPointTSMI.Text = "4 Point";
+            this.FourPointTSMI.Value = 4;
+            this.FourPointTSMI.Click += new System.EventHandler(this.PointsTSMI_Click);
             // 
             // MainForm
             // 
@@ -294,6 +358,14 @@
         public System.Windows.Forms.ToolStripDropDownButton FillColorDDB;
         private System.Windows.Forms.ToolStripMenuItem ChangeFillColorTSMI;
         private System.Windows.Forms.ToolStripMenuItem EmptyFillColorTSMI;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem effectsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem invertToolStripMenuItem;
     }
 }
 

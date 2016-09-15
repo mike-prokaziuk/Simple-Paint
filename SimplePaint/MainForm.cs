@@ -1,4 +1,5 @@
-﻿using SimplePaint.Infrastructure;
+﻿using Autofac;
+using SimplePaint.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,6 +51,7 @@ namespace SimplePaint
             {
                 _painter.Canvas.FillColor = colorDialog.Color;
                 FillColorDDB.BackColor = colorDialog.Color;
+                FillColorDDB.ForeColor = colorDialog.Color.GetBrightness() < 0.4 ? Color.White : Color.Black;
             }
         }
         private void changeToEmptyFillColorTSMI_Click(object sender, EventArgs e)
@@ -63,6 +65,7 @@ namespace SimplePaint
             {
                 _painter.Canvas.MainColor = colorDialog.Color;
                 changeMainColorBtn.BackColor = colorDialog.Color;
+                changeMainColorBtn.ForeColor = colorDialog.Color.GetBrightness() < 0.4? Color.White : Color.Black;
             }
         }
         private void brushControls_Click(object sender,EventArgs e)

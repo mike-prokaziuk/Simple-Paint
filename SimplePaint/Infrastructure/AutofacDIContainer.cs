@@ -17,7 +17,7 @@ namespace SimplePaint.Infrastructure
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<Painter>().As<IPainter>();
-            builder.RegisterType<Canvas>().As<ICanvas>();
+            builder.RegisterType<Canvas>().SingleInstance().As<ICanvas>();
             Container = builder.Build();
         }
     }
