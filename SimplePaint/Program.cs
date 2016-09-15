@@ -1,4 +1,5 @@
-﻿using SimplePaint.Infrastructure;
+﻿using Autofac;
+using SimplePaint.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +18,10 @@ namespace SimplePaint
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            AutofacDIContainer.AddBindings();
-            Application.Run(new MainForm());
+            AutofacDIContainer.AddBindings(); // registration all Autofac bindings
+            var painter = AutofacDIContainer.Container.Resolve<IPainter>(); // 
+
+            Application.Run(new MainForm(painter));
         }
     }
 }
