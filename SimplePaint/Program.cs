@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimplePaint.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace SimplePaint
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            AutofacDIContainer.AddBindings();
             Application.Run(new MainForm());
         }
     }
