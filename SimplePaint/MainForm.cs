@@ -15,13 +15,15 @@ namespace SimplePaint
     public partial class MainForm : Form
     {
         IPainter _painter;
+        IEditor _editor;
         string selectedTool;
-        public MainForm(IPainter painter)
+        public MainForm(IPainter painter,IEditor editor)
         {
             InitializeComponent();
             _painter = painter;
-            _painter.Canvas.Snapshot = new Bitmap(bufferedPanel.ClientRectangle.Width, bufferedPanel.ClientRectangle.Height);
-        }
+            _editor = editor;
+            _painter.Canvas.GetGraphic(bufferedPanel.CreateGraphics());
+         }
         private void PointsTSMI_Click(object sender, EventArgs e)
         {
             foreach (ValuedToolStripMenuItem itm in lineWidthDDB.DropDownItems)
@@ -82,7 +84,6 @@ namespace SimplePaint
             btnClicked.Checked = true;
             selectedTool = btnClicked.Name;
         }
-
         private void bufferedPanel_Paint(object sender, PaintEventArgs e)
         {
             switch (selectedTool)
@@ -102,6 +103,12 @@ namespace SimplePaint
                 default:
                     break;
             }
+        }
+
+        private void clearTSMI_Click(object sender, EventArgs e)
+        {
+            _editor.ClearCanvas();
+
         }
     }
 }

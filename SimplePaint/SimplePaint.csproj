@@ -57,7 +57,9 @@
       <DependentUpon>BufferedPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Canvas.cs" />
+    <Compile Include="Editor.cs" />
     <Compile Include="ICanvas.cs" />
+    <Compile Include="IEditor.cs" />
     <Compile Include="IPainter.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

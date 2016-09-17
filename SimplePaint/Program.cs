@@ -19,9 +19,9 @@ namespace SimplePaint
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             AutofacDIContainer.AddBindings(); // registration all Autofac bindings
-            var painter = AutofacDIContainer.Container.Resolve<IPainter>(); // 
-
-            Application.Run(new MainForm(painter));
+            var painter = AutofacDIContainer.Container.Resolve<IPainter>(); 
+            var editor = AutofacDIContainer.Container.Resolve<IEditor>();
+            Application.Run(new MainForm(painter,editor));
         }
     }
 }

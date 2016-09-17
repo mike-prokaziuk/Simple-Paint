@@ -10,6 +10,7 @@ namespace SimplePaint
 {
     public class Painter : IPainter
     {
+        int z = 0;
         private Point prevPoint { get; set; }
         private Point currPoint { get; set; }
         public ICanvas Canvas { get; set; }
@@ -28,6 +29,7 @@ namespace SimplePaint
         {
             IsMouseDown = false;
             Canvas.Snapshot = (Bitmap)Canvas.TempImage.Clone();
+            //Canvas.Snapshot.Save($@"C:\111\{z}.jpg");
         }
         public void MouseMoveHandle(object sender, MouseEventArgs e)
         {
@@ -54,6 +56,7 @@ namespace SimplePaint
         {
             if (Canvas.TempImage != null)
             {
+                z++;
                 Canvas.TempImage = (Bitmap)Canvas.Snapshot.Clone();
                 var g = Graphics.FromImage(Canvas.TempImage);
                 if (Canvas.FillColor != Color.Empty)
@@ -70,8 +73,8 @@ namespace SimplePaint
         {
             if (Canvas.TempImage != null)
             {
-                Graphics g = Graphics.FromImage(Canvas.TempImage);
-                Pen myPen = new Pen(Canvas.MainColor, Canvas.LineWidth);
+                var g = Graphics.FromImage(Canvas.TempImage);
+                var myPen = new Pen(Canvas.MainColor, Canvas.LineWidth);
                 g.DrawLine(myPen, prevPoint, currPoint);
                 e.Graphics.DrawImageUnscaled(Canvas.TempImage, 0, 0);
                 prevPoint = currPoint;

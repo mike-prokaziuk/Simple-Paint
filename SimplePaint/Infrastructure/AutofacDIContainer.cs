@@ -19,6 +19,11 @@ namespace SimplePaint.Infrastructure
             builder.RegisterType<Painter>().As<IPainter>();
             builder.RegisterType<Canvas>().SingleInstance().As<ICanvas>();
             Container = builder.Build();
+            //
+            builder = new ContainerBuilder();
+            builder.RegisterType<Editor>().As<IEditor>()
+                .WithParameter("canvas",Container.Resolve<ICanvas>());
+            builder.Update(Container);
         }
     }
 }

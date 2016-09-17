@@ -10,6 +10,8 @@ namespace SimplePaint
         int LineWidth { get; set; }
         Color MainColor { get; set; }
         Color FillColor { get; set; }
-        Graphics Graphic { get; set; }
+        Graphics Graphic { get;  }
+        void Clear();
+        void GetGraphic(Graphics graphics);
     }
 }
