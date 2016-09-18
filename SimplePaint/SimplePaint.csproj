@@ -50,12 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BufferedPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BufferedPanel.Designer.cs">
-      <DependentUpon>BufferedPanel.cs</DependentUpon>
-    </Compile>
     <Compile Include="Canvas.cs" />
     <Compile Include="Editor.cs" />
     <Compile Include="ICanvas.cs" />
@@ -108,6 +102,7 @@
     <None Include="Resources\Rectange.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\temp.jpg" />
     <None Include="Resources\Circle.png" />
     <Content Include="Resources\Line.png" />
     <Content Include="Resources\Pencil.png" />

@@ -5,8 +5,9 @@ namespace SimplePaint
 {
     public interface IPainter
     {
-        ICanvas Canvas { get; }
-        bool IsMouseDown { get;}
+        int LineWidth { get; set; }
+        Color MainColor { get; set; }
+        Color FillColor { get; set; }
         void MouseDownHandle(object sender, MouseEventArgs e);
         void MouseUpHandle(object sender, MouseEventArgs e);
         void MouseMoveHandle(object sender, MouseEventArgs e);
@@ -14,5 +15,6 @@ namespace SimplePaint
         void DrawRectangle(object sender, PaintEventArgs e);
         void DrawWithPencil(object sender, PaintEventArgs e);
         void DrawCircle(object sender, PaintEventArgs e);
+        Image Invert();
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimplePaint.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -8,33 +9,22 @@ using System.Windows.Forms;
 
 namespace SimplePaint
 {
-    public class Canvas:ICanvas
+    public class Canvas : ICanvas
     {
-        private int Width { get; set; }
-        private int Height { get; set; }
         public Bitmap Snapshot { get; set; }
         public Bitmap TempImage { get; set; }
-        public int LineWidth { get; set; }
-        public Color MainColor { get; set; }
-        public Color FillColor { get; set; }
-        public Graphics Graphic { get; private set; }
         public Canvas()
         {
-            Width = 640;
-            Height = 480;
-            LineWidth = 1;
-            MainColor = Color.Black;
-            FillColor = Color.Empty;
-            Snapshot = new Bitmap(Width, Height); 
+            Clear();
         }
         public void Clear()
         {
-            Graphic.FillRectangle(new SolidBrush(Color.White), 0, 0, Width, Height);
-            Snapshot = new Bitmap(Width, Height);
+            Snapshot = TempImage = Resources.temp;
         }
-        public void GetGraphic(Graphics graph)
+        public void Fill(Bitmap image)
         {
-            Graphic = graph;
+            Snapshot = TempImage = image;
         }
+
     }
 }

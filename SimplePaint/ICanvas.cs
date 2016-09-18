@@ -7,11 +7,7 @@ namespace SimplePaint
     {
         Bitmap Snapshot { get; set; }
         Bitmap TempImage { get; set; }
-        int LineWidth { get; set; }
-        Color MainColor { get; set; }
-        Color FillColor { get; set; }
-        Graphics Graphic { get;  }
         void Clear();
-        void GetGraphic(Graphics graphics);
+        void Fill(Bitmap image);
     }
 }
