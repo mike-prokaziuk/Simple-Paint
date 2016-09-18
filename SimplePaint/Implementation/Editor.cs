@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SimplePaint.Interfaces;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SimplePaint
+namespace SimplePaint.Implementation
 {
     public class Editor:IEditor
     {

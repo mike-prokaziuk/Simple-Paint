@@ -1,13 +1,8 @@
-﻿using SimplePaint.Properties;
-using System;
-using System.Collections.Generic;
+﻿using SimplePaint.Interfaces;
+using SimplePaint.Properties;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace SimplePaint
+namespace SimplePaint.Implementation
 {
     public class Canvas : ICanvas
     {

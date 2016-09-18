@@ -1,7 +1,6 @@
 ﻿using System.Drawing;
-using System.Windows.Forms;
 
-namespace SimplePaint
+namespace SimplePaint.Interfaces
 {
     public interface ICanvas
     {

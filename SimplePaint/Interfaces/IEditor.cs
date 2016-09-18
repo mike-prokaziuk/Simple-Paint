@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace SimplePaint
+namespace SimplePaint.Interfaces
 {
     public interface IEditor
     {
