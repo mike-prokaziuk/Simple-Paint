@@ -103,9 +103,9 @@ namespace SimplePaint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap temp {
+        internal static System.Drawing.Bitmap WhiteBackground {
             get {
-                object obj = ResourceManager.GetObject("temp", resourceCulture);
+                object obj = ResourceManager.GetObject("WhiteBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

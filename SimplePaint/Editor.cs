@@ -17,7 +17,7 @@ namespace SimplePaint
         }
         public void SaveImageAs(string fileName)
         {
-            _canvas.Snapshot.Save(fileName);
+            _canvas.SnapshotOfCurrentState.Save(fileName);
         }
         public void LoadImage(Bitmap image)
         {

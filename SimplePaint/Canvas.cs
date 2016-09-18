@@ -11,19 +11,19 @@ namespace SimplePaint
 {
     public class Canvas : ICanvas
     {
-        public Bitmap Snapshot { get; set; }
-        public Bitmap TempImage { get; set; }
+        public Bitmap SnapshotOfCurrentState { get; set; }
+        public Bitmap SnapshotOfDrawingProcess { get; set; }
         public Canvas()
         {
             Clear();
         }
         public void Clear()
         {
-            Snapshot = TempImage = Resources.temp;
+            SnapshotOfCurrentState = SnapshotOfDrawingProcess = Resources.WhiteBackground;
         }
         public void Fill(Bitmap image)
         {
-            Snapshot = TempImage = image;
+            SnapshotOfCurrentState = SnapshotOfDrawingProcess = image;
         }
 
     }

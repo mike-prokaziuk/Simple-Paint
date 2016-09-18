@@ -31,19 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clearTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearMI = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.loadTSMI = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveMI = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.exitTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitMI = new System.Windows.Forms.ToolStripMenuItem();
             this.effectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.invertTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.invertMI = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolBar = new System.Windows.Forms.ToolStrip();
-            this.Pencil = new System.Windows.Forms.ToolStripButton();
-            this.Line = new System.Windows.Forms.ToolStripButton();
-            this.Rectangle = new System.Windows.Forms.ToolStripButton();
-            this.Circle = new System.Windows.Forms.ToolStripButton();
+            this.PencilBtn = new System.Windows.Forms.ToolStripButton();
+            this.LineBtn = new System.Windows.Forms.ToolStripButton();
+            this.RectangleBtn = new System.Windows.Forms.ToolStripButton();
+            this.CircleBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.changeMainColorBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -52,6 +52,9 @@
             this.EmptyFillColorTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.lineWidthDDB = new System.Windows.Forms.ToolStripDropDownButton();
+            this.OnePointTSMI = new SimplePaint.ValuedToolStripMenuItem();
+            this.TwoPointTSMI = new SimplePaint.ValuedToolStripMenuItem();
+            this.FourPointTSMI = new SimplePaint.ValuedToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
@@ -60,9 +63,6 @@
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.CanvasControl = new System.Windows.Forms.PictureBox();
             this.substratePanel = new System.Windows.Forms.Panel();
-            this.OnePointTSMI = new SimplePaint.ValuedToolStripMenuItem();
-            this.TwoPointTSMI = new SimplePaint.ValuedToolStripMenuItem();
-            this.FourPointTSMI = new SimplePaint.ValuedToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.ToolBar.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -84,76 +84,76 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clearTSMI,
+            this.clearMI,
             this.toolStripSeparator4,
-            this.loadTSMI,
-            this.saveTSMI,
+            this.loadMI,
+            this.saveMI,
             this.toolStripSeparator,
-            this.exitTSMI});
+            this.exitMI});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // clearTSMI
+            // clearMI
             // 
-            this.clearTSMI.Name = "clearTSMI";
-            this.clearTSMI.Size = new System.Drawing.Size(101, 22);
-            this.clearTSMI.Text = "Clear";
-            this.clearTSMI.Click += new System.EventHandler(this.clearTSMI_Click);
+            this.clearMI.Name = "clearMI";
+            this.clearMI.Size = new System.Drawing.Size(152, 22);
+            this.clearMI.Text = "Clear";
+            this.clearMI.Click += new System.EventHandler(this.clearMI_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(98, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
             // 
-            // loadTSMI
+            // loadMI
             // 
-            this.loadTSMI.Name = "loadTSMI";
-            this.loadTSMI.Size = new System.Drawing.Size(101, 22);
-            this.loadTSMI.Text = "Load";
-            this.loadTSMI.Click += new System.EventHandler(this.loadTSMI_Click);
+            this.loadMI.Name = "loadMI";
+            this.loadMI.Size = new System.Drawing.Size(152, 22);
+            this.loadMI.Text = "Load";
+            this.loadMI.Click += new System.EventHandler(this.loadMI_Click);
             // 
-            // saveTSMI
+            // saveMI
             // 
-            this.saveTSMI.Name = "saveTSMI";
-            this.saveTSMI.Size = new System.Drawing.Size(101, 22);
-            this.saveTSMI.Text = "Save";
-            this.saveTSMI.Click += new System.EventHandler(this.saveTSMI_Click);
+            this.saveMI.Name = "saveMI";
+            this.saveMI.Size = new System.Drawing.Size(152, 22);
+            this.saveMI.Text = "Save";
+            this.saveMI.Click += new System.EventHandler(this.saveMI_Click);
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(98, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(149, 6);
             // 
-            // exitTSMI
+            // exitMI
             // 
-            this.exitTSMI.Name = "exitTSMI";
-            this.exitTSMI.Size = new System.Drawing.Size(101, 22);
-            this.exitTSMI.Text = "Exit";
-            this.exitTSMI.Click += new System.EventHandler(this.exitTSMI_Click);
+            this.exitMI.Name = "exitMI";
+            this.exitMI.Size = new System.Drawing.Size(152, 22);
+            this.exitMI.Text = "Exit";
+            this.exitMI.Click += new System.EventHandler(this.exitMI_Click);
             // 
             // effectsToolStripMenuItem
             // 
             this.effectsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.invertTSMI});
+            this.invertMI});
             this.effectsToolStripMenuItem.Name = "effectsToolStripMenuItem";
             this.effectsToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.effectsToolStripMenuItem.Text = "Effects";
             // 
-            // invertTSMI
+            // invertMI
             // 
-            this.invertTSMI.Name = "invertTSMI";
-            this.invertTSMI.Size = new System.Drawing.Size(152, 22);
-            this.invertTSMI.Text = "Invert";
-            this.invertTSMI.Click += new System.EventHandler(this.invertTSMI_Click);
+            this.invertMI.Name = "invertMI";
+            this.invertMI.Size = new System.Drawing.Size(152, 22);
+            this.invertMI.Text = "Invert";
+            this.invertMI.Click += new System.EventHandler(this.invertMI_Click);
             // 
             // ToolBar
             // 
             this.ToolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Pencil,
-            this.Line,
-            this.Rectangle,
-            this.Circle,
+            this.PencilBtn,
+            this.LineBtn,
+            this.RectangleBtn,
+            this.CircleBtn,
             this.toolStripSeparator1,
             this.changeMainColorBtn,
             this.toolStripSeparator2,
@@ -165,46 +165,46 @@
             this.ToolBar.Size = new System.Drawing.Size(1052, 25);
             this.ToolBar.TabIndex = 1;
             this.ToolBar.Text = "toolStrip1";
-            this.ToolBar.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ToolBar_ItemClicked);
             // 
-            // Pencil
+            // PencilBtn
             // 
-            this.Pencil.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Pencil.Image = ((System.Drawing.Image)(resources.GetObject("Pencil.Image")));
-            this.Pencil.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Pencil.Name = "Pencil";
-            this.Pencil.Size = new System.Drawing.Size(23, 22);
-            this.Pencil.Click += new System.EventHandler(this.brushControls_Click);
+            this.PencilBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.PencilBtn.Image = ((System.Drawing.Image)(resources.GetObject("PencilBtn.Image")));
+            this.PencilBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.PencilBtn.Name = "PencilBtn";
+            this.PencilBtn.Size = new System.Drawing.Size(23, 22);
+            this.PencilBtn.Text = "Pencil";
+            this.PencilBtn.Click += new System.EventHandler(this.brushControls_Click);
             // 
-            // Line
+            // LineBtn
             // 
-            this.Line.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Line.Image = ((System.Drawing.Image)(resources.GetObject("Line.Image")));
-            this.Line.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Line.Name = "Line";
-            this.Line.Size = new System.Drawing.Size(23, 22);
-            this.Line.Text = "toolStripButton2";
-            this.Line.Click += new System.EventHandler(this.brushControls_Click);
+            this.LineBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.LineBtn.Image = ((System.Drawing.Image)(resources.GetObject("LineBtn.Image")));
+            this.LineBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.LineBtn.Name = "LineBtn";
+            this.LineBtn.Size = new System.Drawing.Size(23, 22);
+            this.LineBtn.Text = "Line";
+            this.LineBtn.Click += new System.EventHandler(this.brushControls_Click);
             // 
-            // Rectangle
+            // RectangleBtn
             // 
-            this.Rectangle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Rectangle.Image = ((System.Drawing.Image)(resources.GetObject("Rectangle.Image")));
-            this.Rectangle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Rectangle.Name = "Rectangle";
-            this.Rectangle.Size = new System.Drawing.Size(23, 22);
-            this.Rectangle.Text = "toolStripButton3";
-            this.Rectangle.Click += new System.EventHandler(this.brushControls_Click);
+            this.RectangleBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.RectangleBtn.Image = ((System.Drawing.Image)(resources.GetObject("RectangleBtn.Image")));
+            this.RectangleBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RectangleBtn.Name = "RectangleBtn";
+            this.RectangleBtn.Size = new System.Drawing.Size(23, 22);
+            this.RectangleBtn.Text = "Rectangle";
+            this.RectangleBtn.Click += new System.EventHandler(this.brushControls_Click);
             // 
-            // Circle
+            // CircleBtn
             // 
-            this.Circle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Circle.Image = ((System.Drawing.Image)(resources.GetObject("Circle.Image")));
-            this.Circle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Circle.Name = "Circle";
-            this.Circle.Size = new System.Drawing.Size(23, 22);
-            this.Circle.Text = "toolStripButton4";
-            this.Circle.Click += new System.EventHandler(this.brushControls_Click);
+            this.CircleBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.CircleBtn.Image = ((System.Drawing.Image)(resources.GetObject("CircleBtn.Image")));
+            this.CircleBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CircleBtn.Name = "CircleBtn";
+            this.CircleBtn.Size = new System.Drawing.Size(23, 22);
+            this.CircleBtn.Text = "Circle";
+            this.CircleBtn.Click += new System.EventHandler(this.brushControls_Click);
             // 
             // toolStripSeparator1
             // 
@@ -243,14 +243,14 @@
             this.ChangeFillColorTSMI.Name = "ChangeFillColorTSMI";
             this.ChangeFillColorTSMI.Size = new System.Drawing.Size(161, 22);
             this.ChangeFillColorTSMI.Text = "Change fill color";
-            this.ChangeFillColorTSMI.Click += new System.EventHandler(this.changeFillColorTSMI_Click);
+            this.ChangeFillColorTSMI.Click += new System.EventHandler(this.changeFillColorMI_Click);
             // 
             // EmptyFillColorTSMI
             // 
             this.EmptyFillColorTSMI.Name = "EmptyFillColorTSMI";
             this.EmptyFillColorTSMI.Size = new System.Drawing.Size(161, 22);
             this.EmptyFillColorTSMI.Text = "Empty fill color";
-            this.EmptyFillColorTSMI.Click += new System.EventHandler(this.changeToEmptyFillColorTSMI_Click);
+            this.EmptyFillColorTSMI.Click += new System.EventHandler(this.changeToEmptyFillColorMI_Click);
             // 
             // toolStripSeparator3
             // 
@@ -269,6 +269,32 @@
             this.lineWidthDDB.Name = "lineWidthDDB";
             this.lineWidthDDB.Size = new System.Drawing.Size(77, 22);
             this.lineWidthDDB.Text = "Line Width";
+            // 
+            // OnePointTSMI
+            // 
+            this.OnePointTSMI.Checked = true;
+            this.OnePointTSMI.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.OnePointTSMI.Name = "OnePointTSMI";
+            this.OnePointTSMI.Size = new System.Drawing.Size(152, 22);
+            this.OnePointTSMI.Text = "1 Point";
+            this.OnePointTSMI.Value = 1;
+            this.OnePointTSMI.Click += new System.EventHandler(this.changeOfWidthLineMI_Click);
+            // 
+            // TwoPointTSMI
+            // 
+            this.TwoPointTSMI.Name = "TwoPointTSMI";
+            this.TwoPointTSMI.Size = new System.Drawing.Size(152, 22);
+            this.TwoPointTSMI.Text = "2 Point";
+            this.TwoPointTSMI.Value = 2;
+            this.TwoPointTSMI.Click += new System.EventHandler(this.changeOfWidthLineMI_Click);
+            // 
+            // FourPointTSMI
+            // 
+            this.FourPointTSMI.Name = "FourPointTSMI";
+            this.FourPointTSMI.Size = new System.Drawing.Size(152, 22);
+            this.FourPointTSMI.Text = "4 Point";
+            this.FourPointTSMI.Value = 4;
+            this.FourPointTSMI.Click += new System.EventHandler(this.changeOfWidthLineMI_Click);
             // 
             // statusStrip
             // 
@@ -310,10 +336,10 @@
             this.CanvasControl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.CanvasControl.TabIndex = 4;
             this.CanvasControl.TabStop = false;
-            this.CanvasControl.Paint += new System.Windows.Forms.PaintEventHandler(this.CanvasControl_Paint);
-            this.CanvasControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CanvasControl_MouseDown);
-            this.CanvasControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CanvasControl_MouseMove);
-            this.CanvasControl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.CanvasControl_MouseUp);
+            this.CanvasControl.Paint += new System.Windows.Forms.PaintEventHandler(this.canvasControl_Paint);
+            this.CanvasControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvasControl_MouseDown);
+            this.CanvasControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.canvasControl_MouseMove);
+            this.CanvasControl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvasControl_MouseUp);
             // 
             // substratePanel
             // 
@@ -324,32 +350,6 @@
             this.substratePanel.Name = "substratePanel";
             this.substratePanel.Size = new System.Drawing.Size(1052, 788);
             this.substratePanel.TabIndex = 5;
-            // 
-            // OnePointTSMI
-            // 
-            this.OnePointTSMI.Checked = true;
-            this.OnePointTSMI.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.OnePointTSMI.Name = "OnePointTSMI";
-            this.OnePointTSMI.Size = new System.Drawing.Size(111, 22);
-            this.OnePointTSMI.Text = "1 Point";
-            this.OnePointTSMI.Value = 1;
-            this.OnePointTSMI.Click += new System.EventHandler(this.PointsTSMI_Click);
-            // 
-            // TwoPointTSMI
-            // 
-            this.TwoPointTSMI.Name = "TwoPointTSMI";
-            this.TwoPointTSMI.Size = new System.Drawing.Size(111, 22);
-            this.TwoPointTSMI.Text = "2 Point";
-            this.TwoPointTSMI.Value = 2;
-            this.TwoPointTSMI.Click += new System.EventHandler(this.PointsTSMI_Click);
-            // 
-            // FourPointTSMI
-            // 
-            this.FourPointTSMI.Name = "FourPointTSMI";
-            this.FourPointTSMI.Size = new System.Drawing.Size(111, 22);
-            this.FourPointTSMI.Text = "4 Point";
-            this.FourPointTSMI.Value = 4;
-            this.FourPointTSMI.Click += new System.EventHandler(this.PointsTSMI_Click);
             // 
             // MainForm
             // 
@@ -390,12 +390,12 @@
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStrip ToolBar;
-        private System.Windows.Forms.ToolStripButton Pencil;
+        private System.Windows.Forms.ToolStripButton PencilBtn;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripProgressBar ProgressBar;
-        private System.Windows.Forms.ToolStripButton Line;
-        private System.Windows.Forms.ToolStripButton Rectangle;
-        private System.Windows.Forms.ToolStripButton Circle;
+        private System.Windows.Forms.ToolStripButton LineBtn;
+        private System.Windows.Forms.ToolStripButton RectangleBtn;
+        private System.Windows.Forms.ToolStripButton CircleBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton changeMainColorBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
@@ -408,14 +408,14 @@
         public System.Windows.Forms.ToolStripDropDownButton FillColorDDB;
         private System.Windows.Forms.ToolStripMenuItem ChangeFillColorTSMI;
         private System.Windows.Forms.ToolStripMenuItem EmptyFillColorTSMI;
-        private System.Windows.Forms.ToolStripMenuItem clearTSMI;
+        private System.Windows.Forms.ToolStripMenuItem clearMI;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem loadTSMI;
-        private System.Windows.Forms.ToolStripMenuItem saveTSMI;
+        private System.Windows.Forms.ToolStripMenuItem loadMI;
+        private System.Windows.Forms.ToolStripMenuItem saveMI;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripMenuItem exitTSMI;
+        private System.Windows.Forms.ToolStripMenuItem exitMI;
         private System.Windows.Forms.ToolStripMenuItem effectsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem invertTSMI;
+        private System.Windows.Forms.ToolStripMenuItem invertMI;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
