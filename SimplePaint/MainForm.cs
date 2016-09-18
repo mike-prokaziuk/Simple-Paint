@@ -32,7 +32,7 @@ namespace SimplePaint
             }
             ToolStripButton btnClicked = sender as ToolStripButton;
             btnClicked.Checked = true;
-            selectedTool = btnClicked.Name;
+            selectedTool = btnClicked.Text;
         }
         private void canvasControl_Paint(object sender, PaintEventArgs e)
         {

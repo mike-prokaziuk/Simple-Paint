@@ -48,9 +48,9 @@ namespace SimplePaint.Implementation
         #region Draw methods
         public void DrawLine(object sender, PaintEventArgs e)
         {
+            _canvas.SnapshotOfDrawingProcess = (Bitmap)_canvas.SnapshotOfCurrentState.Clone();
             var imageWidth = _canvas.SnapshotOfDrawingProcess.Width;
             var imageHeigth = _canvas.SnapshotOfDrawingProcess.Height;
-            _canvas.SnapshotOfDrawingProcess = (Bitmap)_canvas.SnapshotOfCurrentState.Clone();
             Graphics g = Graphics.FromImage(_canvas.SnapshotOfDrawingProcess);
             Pen myPen = new Pen(MainColor, LineWidth);
             g.DrawLine(myPen, _startPoint, _currentPoint);
@@ -58,12 +58,12 @@ namespace SimplePaint.Implementation
         }
         public void DrawRectangle(object sender, PaintEventArgs e)
         {
+            _canvas.SnapshotOfDrawingProcess = (Bitmap)_canvas.SnapshotOfCurrentState.Clone();
             var figureWidth = _currentPoint.X - _startPoint.X;
             var figureHeigth = _currentPoint.Y - _startPoint.Y;
             var imageWidth = _canvas.SnapshotOfDrawingProcess.Width;
             var imageHeigth = _canvas.SnapshotOfDrawingProcess.Height;
 
-            _canvas.SnapshotOfDrawingProcess = (Bitmap)_canvas.SnapshotOfCurrentState.Clone();
             var g = Graphics.FromImage(_canvas.SnapshotOfDrawingProcess);
             if (FillColor != Color.Empty)
             {
@@ -76,10 +76,10 @@ namespace SimplePaint.Implementation
         }
         public void DrawWithPencil(object sender, PaintEventArgs e)
         {
+            var g = Graphics.FromImage(_canvas.SnapshotOfDrawingProcess);
             var imageWidth = _canvas.SnapshotOfDrawingProcess.Width;
             var imageHeigth = _canvas.SnapshotOfDrawingProcess.Height;
 
-            var g = Graphics.FromImage(_canvas.SnapshotOfDrawingProcess);
             var myPen = new Pen(MainColor, LineWidth);
             g.DrawLine(myPen, _startPoint, _currentPoint);
             e.Graphics.DrawImage(_canvas.SnapshotOfDrawingProcess, 0, 0, imageWidth, imageHeigth);
@@ -87,12 +87,11 @@ namespace SimplePaint.Implementation
         }
         public void DrawCircle(object sender, PaintEventArgs e)
         {
+            _canvas.SnapshotOfDrawingProcess = (Bitmap)_canvas.SnapshotOfCurrentState.Clone();
             var figureWidth = _currentPoint.X - _startPoint.X;
             var figureHeigth = _currentPoint.Y - _startPoint.Y;
             var imageWidth = _canvas.SnapshotOfDrawingProcess.Width;
             var imageHeigth = _canvas.SnapshotOfDrawingProcess.Height;
-
-            _canvas.SnapshotOfDrawingProcess = (Bitmap)_canvas.SnapshotOfCurrentState.Clone();
             var g = Graphics.FromImage(_canvas.SnapshotOfDrawingProcess);
             var myPen = new Pen(MainColor, LineWidth);
             if (FillColor != Color.Empty)
